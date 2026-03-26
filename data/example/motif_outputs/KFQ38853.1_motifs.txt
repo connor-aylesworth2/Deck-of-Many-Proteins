@@ -1,0 +1,34 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Thu 26 Mar 2026 21:16:43
+# Commandline: patmatmotifs
+#    -sequence motifs/KFQ38853.1.fasta
+#    -outfile motif_outputs/KFQ38853.1_motifs.txt
+# Report_format: dbmotif
+# Report_file: motif_outputs/KFQ38853.1_motifs.txt
+########################################
+
+#=======================================
+#
+# Sequence: KFQ38853.1     from: 1   to: 352
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 135 of sequence
+End = position 138 of sequence
+
+Motif = AMIDATION
+
+LLSTAMGKKQSRTL
+     |  |
+   135  138
+
+
+#---------------------------------------
+#---------------------------------------

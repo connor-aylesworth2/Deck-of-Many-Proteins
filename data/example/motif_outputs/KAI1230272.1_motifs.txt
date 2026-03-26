@@ -1,0 +1,24 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Thu 26 Mar 2026 21:16:42
+# Commandline: patmatmotifs
+#    -sequence motifs/KAI1230272.1.fasta
+#    -outfile motif_outputs/KAI1230272.1_motifs.txt
+# Report_format: dbmotif
+# Report_file: motif_outputs/KAI1230272.1_motifs.txt
+########################################
+
+#=======================================
+#
+# Sequence: KAI1230272.1     from: 1   to: 370
+# HitCount: 0
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+
+#---------------------------------------
+#---------------------------------------

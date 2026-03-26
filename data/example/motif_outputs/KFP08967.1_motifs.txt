@@ -1,0 +1,34 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Thu 26 Mar 2026 21:16:43
+# Commandline: patmatmotifs
+#    -sequence motifs/KFP08967.1.fasta
+#    -outfile motif_outputs/KFP08967.1_motifs.txt
+# Report_format: dbmotif
+# Report_file: motif_outputs/KFP08967.1_motifs.txt
+########################################
+
+#=======================================
+#
+# Sequence: KFP08967.1     from: 1   to: 353
+# HitCount: 1
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+Length = 4
+Start = position 136 of sequence
+End = position 139 of sequence
+
+Motif = AMIDATION
+
+LLSAAMGKKQSKTL
+     |  |
+   136  139
+
+
+#---------------------------------------
+#---------------------------------------
