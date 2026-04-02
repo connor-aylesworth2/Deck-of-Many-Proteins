@@ -1,103 +1,63 @@
 <?php
+require 'login.php';
 include 'header.php';
-require 'login.php'; 
 
 $example_dir = "data/example";
-$motif_dir = $example_dir . "/patmat_outputs";
 
-$raw_fasta = $example_dir . "/g6_aves.fasta";
+$raw_fasta   = $example_dir . "/g6_aves.fasta";
 $clean_fasta = $example_dir . "/g6_aves_cleaned.fasta";
-$msa_fasta = $example_dir . "/g6_aves_MSA.fasta";
+$msa_fasta   = $example_dir . "/g6_aves_MSA.fasta";
 $plotcon_png = $example_dir . "/g6_aves_plotcon.1.png";
 
-$total_seqs = 0;
-if (file_exists($clean_fasta)) {
-    $lines = file($clean_fasta);
-    foreach ($lines as $line) {
-        if (strpos($line, '>') === 0) {
-            $total_seqs++;
-        }
-    }
-}
-
-$motif_files = [];
-if (is_dir($motif_dir)) {
-    $motif_files = glob($motif_dir . "/*");
-    sort($motif_files);
-}
-
-
+$example_job = null;
+$sequence_rows = [];
 $motif_rows = [];
+$total_seqs = 0;
 
-
-
-/* get example job input seqs */
-$job_stmt = $pdo->prepare("
-    SELECT job_id
-    FROM jobs
-    WHERE is_example = 1
-    ");
+/* fetch example job */
+$job_stmt = $pdo->prepare("SELECT job_id FROM jobs WHERE is_example = 1 LIMIT 1");
 $job_stmt->execute();
 $example_job = $job_stmt->fetch();
 
-$sequence_rows = [];
-
+/*  */
 if ($example_job) {
-    $job_id = $example_job['job_id'];
+    $job_id = (int)$example_job['job_id'];
 
-    $seq_stmt = $pdo->prepare("
-        SELECT accession, protein_name, organism_name, sequence_length
-        FROM sequences
-        WHERE job_id = ?
-        ORDER BY organism_name, accession
-    ");
+    /* fetch example sequences */
+    $seq_stmt = $pdo->prepare("SELECT accession, protein_name, organism_name, sequence_length FROM sequences WHERE job_id = ? ORDER BY organism_name, accession");
     $seq_stmt->execute([$job_id]);
     $sequence_rows = $seq_stmt->fetchAll();
-}
 
-if ($example_job) {
-    $job_id = $example_job['job_id'];
+    /*  */
+    $total_seqs = count($sequence_rows);
 
-    $motif_stmt = $pdo->prepare("
-        SELECT
-            s.accession,
-            s.organism_name,
-            mh.motif_name,
-            mh.start_pos,
-            mh.end_pos,
-            mh.hit_score,
-            mh.hit_description
-        FROM motif_hits mh
-        JOIN sequences s
-            ON mh.sequence_id = s.sequence_id
-        WHERE mh.job_id = ?
-        ORDER BY s.organism_name, s.accession, mh.start_pos
-    ");
+    /* fetch motif hits for example job */
+    $motif_stmt = $pdo->prepare("SELECT s.accession, s.organism_name, mh.motif_name, mh.start_pos, mh.end_pos, mh.hit_score, mh.hit_description FROM motif_hits mh JOIN sequences s ON mh.sequence_id = s.sequence_id WHERE mh.job_id = ? ORDER BY s.organism_name, s.accession, mh.start_pos");
     $motif_stmt->execute([$job_id]);
     $motif_rows = $motif_stmt->fetchAll();
 }
 ?>
 
 
-
+<!-- -->
 <main class="container">
+<section class="card">
 <h2>Example Dataset: Glucose-6-Phosphatase Proteins from Aves</h2>
-<p>This page demonstrates the full workflow that this webpage executes using a precomputed example dataset of glucose-6-phosphatase protein sequences retrieved from birds (Aves). The sequences were filtered for quality and duplicates, aligned against each other with Clustal Omega, analysed for conservation with EMBOSS plotcon, scanned for motifs using EMBOSS patmatmotifs, and another thing.</p>
-
-
+<p>This page demonstrates the full workflow of Deck of Many Proteins using a precomputed example dataset of glucose-6-phosphatase protein sequences from birds (Aves). It is intended as a “try before you buy” example so that users can explore the website’s functionality before submitting their own analyses. </p>
+<p>The example dataset was retrieved from NCBI, filtered to remove duplicate or poor-quality entries, aligned with Clustal Omega, analysed for conservation with EMBOSS plotcon, and scanned for known motifs with EMBOSS patmatmotifs.</p>
+</section>
 
 <section class="card">
 <h3>Precomputed Dataset Summary</h3>
 <p><strong>Protein family:</strong> Glucose-6-phosphatase</p>
 <p><strong>Taxon group:</strong> Aves</p>
-<p><strong>Number of cleaned sequences:</strong> <?php echo $total_seqs; ?></p>
+<p><strong>Number of cleaned sequences:</strong> <?php echo htmlspecialchars((string)$total_seqs); ?></p>
 </section>
-
-
 
 <section class="card">
 <h3>Example Sequences</h3>
-<p>The table below contains a filtered list of glucose-6-phosphatase protein sequences retrieved from NCBI's Protein DB for the avian example dataset. Sequences were attained with the following unix command: <code>esearch -db protein -query '"glucose-6-phosphatase"[Protein Name] AND Aves[Organism]' | efetch -format fasta &gt; g6_aves.fasta</code> </p>
+<p>The table below contains the cleaned glucose-6-phosphatase protein sequences used for the avian example dataset. These sequences were originally retrieved from the NCBI Protein database using the following command:</p>
+<p><code>esearch -db protein -query '"glucose-6-phosphatase"[Protein Name] AND Aves[Organism]' | efetch -format fasta &gt; g6_aves.fasta</code></p>
 
 <?php if (!empty($sequence_rows)): ?>
 <table>
@@ -109,78 +69,66 @@ if ($example_job) {
 </tr>
 
 <?php foreach ($sequence_rows as $row): ?>
-<tr>
-<td><?php echo htmlspecialchars($row['accession']); ?></td>
-<td><?php echo htmlspecialchars($row['protein_name']); ?></td>
-<td><?php echo htmlspecialchars($row['organism_name']); ?></td>
-<td><?php echo htmlspecialchars($row['sequence_length']); ?></td>
-</tr>
+    <tr>
+    <td><?php echo htmlspecialchars($row['accession']); ?></td>
+    <td><?php echo htmlspecialchars($row['protein_name'] ?? ''); ?></td>
+    <td><?php echo htmlspecialchars($row['organism_name'] ?? ''); ?></td>
+    <td><?php echo htmlspecialchars((string)($row['sequence_length'] ?? '')); ?></td>
+    </tr>
 <?php endforeach; ?>
 </table>
 <?php else: ?>
-<p>No sequences were found for the example dataset.</p>
+<p class="warning">No sequences were found for the example dataset.</p>
 <?php endif; ?>
 </section>
-
-
 
 <section class="card">
 <h3>Download Files</h3>
 <ul>
 <?php if (file_exists($raw_fasta)): ?>
-<li><a href="<?php echo $raw_fasta; ?>">Raw FASTA sequences</a></li>
+<li>
+<a href="<?php echo htmlspecialchars($raw_fasta); ?>">Download raw FASTA sequences</a>
+</li>
 <?php endif; ?>
 
 <?php if (file_exists($clean_fasta)): ?>
-<li><a href="<?php echo $clean_fasta; ?>">Cleaned FASTA sequences</a></li>
+<li>
+<a href="<?php echo htmlspecialchars($clean_fasta); ?>">Download cleaned FASTA sequences</a>
+</li>
+<?php endif; ?>
+
+<?php if (file_exists($msa_fasta)): ?>
+<li>
+<a href="<?php echo htmlspecialchars($msa_fasta); ?>">Download Clustal Omega multiple sequence alignment</a>
+</li>
+<?php endif; ?>
+
+<?php if (file_exists($plotcon_png)): ?>
+<li>
+<a href="<?php echo htmlspecialchars($plotcon_png); ?>">Download conservation plot PNG</a>
+</li>
 <?php endif; ?>
 </ul>
 </section>
-
-
 
 <section class="card">
 <h3>Sequence Conservation Plot</h3>
-<p>The cleaned avain glucose-6-phosphatase protein sequences were aligned to each other using Clustal Omega to generate a multiple sequence alignment (MSA) The MSA was then analysed with EMBOSS plotcon to analyze how strongly conserved each amino acid position is accross the aligned sequences from the precomputed dataset.</p>
+<p>The cleaned avian glucose-6-phosphatase protein sequences were aligned using Clustal Omega to generate a multiple sequence alignment (MSA). The alignment was then analysed with EMBOSS plotcon to estimate how strongly each amino acid position is conserved across the example dataset.</p>
 
 <?php if (file_exists($plotcon_png)): ?>
-<img class="plot"
-     src="<?php echo htmlspecialchars($plotcon_png); ?>"
-     alt="Sequence conservation plot for avian glucose-6-phosphatase alignment">
-<p>Higher values in the conservation profile indicate regions of the protein alignment that are more strongly conserved across species, which may point to functionally important or structurally constrained regions.</p>
+<img
+    class="plot"
+    src="<?php echo htmlspecialchars($plotcon_png); ?>"
+    alt="Sequence conservation plot for avian glucose-6-phosphatase alignment">
+<p>Higher values in the conservation profile indicate regions of the alignment that are more strongly preserved across species. Such regions may correspond to functionally important or structurally constrained parts of the protein.</p>
 <?php else: ?>
 <p class="warning">Conservation plot not found.</p>
 <?php endif; ?>
-
-<h3>Analysis Files</h3>
-<?php if (file_exists($msa_fasta)): ?>
-<li>
-<a href="<?php echo htmlspecialchars($msa_fasta); ?>">
-Download Clustal Omega multiple sequence alignment
-</a>
-</li>
-<?php endif; ?>
-
-<?php if (file_exists($plotcon_png)): ?>
-<li>
-<a href="<?php echo htmlspecialchars($plotcon_png); ?>">
-Download conservation plot PNG
-</a>
-</li>
-<?php endif; ?>
-</ul>
 </section>
-
-
 
 <section class="card">
 <h3>Motif Hits Summary</h3>
-
-<p>
-The table below summarises motif hits identified by EMBOSS patmatmotifs in the example
-glucose-6-phosphatase bird sequences. Each row corresponds to a detected motif in one
-protein sequence.
-</p>
+<p>The table below summarises motif hits identified by EMBOSS patmatmotifs in the example bird glucose-6-phosphatase sequences. Each row corresponds to a detected motif in one protein sequence.</p>
 
 <?php if (!empty($motif_rows)): ?>
 <table>
@@ -194,31 +142,30 @@ protein sequence.
 </tr>
 
 <?php foreach ($motif_rows as $row): ?>
-<tr>
-<td><?php echo htmlspecialchars($row['accession']); ?></td>
-<td><?php echo htmlspecialchars($row['organism_name']); ?></td>
-<td><?php echo htmlspecialchars($row['motif_name']); ?></td>
-<td><?php echo htmlspecialchars($row['start_pos']); ?></td>
-<td><?php echo htmlspecialchars($row['end_pos']); ?></td>
-<td>
-    <?php
-    if ($row['hit_score'] !== null) {
-        echo htmlspecialchars($row['hit_score']);
-    } else {
-        echo "N/A";
-    }
-    ?>
-</td>
-</tr>
+    <tr>
+    <td><?php echo htmlspecialchars($row['accession']); ?></td>
+    <td><?php echo htmlspecialchars($row['organism_name']); ?></td>
+    <td><?php echo htmlspecialchars($row['motif_name']); ?></td>
+    <td><?php echo htmlspecialchars((string)$row['start_pos']); ?></td>
+    <td><?php echo htmlspecialchars((string)$row['end_pos']); ?></td>
+    <td><?php if ($row['hit_score'] !== null) {
+        echo htmlspecialchars((string)$row['hit_score']);}
+    else {echo "N/A";}?></td>
+    </tr>
 <?php endforeach; ?>
 </table>
+
+<p>Repeated detection of similar motifs across many bird glucose-6-phosphatase proteins supports the idea that these sequences share a conserved functional role. Differences in motif presence may reflect partial sequences, annotation variation, or genuine biological divergence.</p>
+<?php else: ?>
+<p class="warning">No motif hits were found for the example dataset.</p>
+<?php endif; ?>
 </section>
 
 <section class="card">
 <h3>Biological Context</h3>
-<p>Glucose-6-phosphatase is involved in glucose metabolism, and comparing its sequence conservation across birds can help identify regions that are strongly preserved and therefore likely to be functionally important.</p>
+<p>Glucose-6-phosphatase is involved in glucose metabolism. Comparing its sequence conservation across birds can help identify regions that are strongly preserved and are therefore more likely to be functionally important.</p>
+<p>Conserved sequence regions may reflect catalytic importance, structural constraint, or shared biological roles across species. Motif analysis provides an additional layer of interpretation by identifying known sequence patterns associated with protein function.</p>
 </section>
 </main>
-<?php endif; ?>
-<?php include 'footer.php'; ?>
 
+<?php include 'footer.php'; ?>
