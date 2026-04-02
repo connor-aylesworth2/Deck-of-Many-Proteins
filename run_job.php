@@ -1,10 +1,14 @@
+#!/usr/local/bin/php
+
 
 <?php declare(strict_types=1); //declare strict types for easier debugging
 require __DIR__ . '/login.php'; // make pdo-connecting login.php file required
 
 
-
-/* ##### Usage: php run_job.php <job_id> ##### */
+/* argc check */
+if ($argc < 2) {fwrite(STDERR, "Usage: php run_job.php <job_id>\n");
+    exit(1);
+}
 
 /* stores suposed job_id arg and throws an error if job_id is negative */
 $job_id = (int)$argv[1];
@@ -147,8 +151,11 @@ if (!file_exists($clean_fasta) || filesize($clean_fasta) === 0) {throw new Runti
     /* update jobs mysql table notes field */
     updateJob($pdo, $job_id, ['notes' => 'Importing cleaned sequences into database']);
 
-    /* build cleaned seq import command; parse cleaned fasta seqs and import them to sequences mysql table */
+    /* build cleaned seq import command, run it, and import to sequences table */
     $import_seq_cmd = escapeshellarg($php_bin) . " " . escapeshellarg(__DIR__ . "/scripts/populate_sequences.php") . " " . escapeshellarg((string)$job_id) . " " . escapeshellarg($clean_fasta);
+    echo "Running sequence import command:\n$import_seq_cmd\n";
+runCommand($import_seq_cmd);
+
 
     /* counting imported sequences; pulls total # of seqs imported into sequences table with pdo */
     $count_stmt = $pdo->prepare("SELECT COUNT(*) FROM sequences WHERE job_id = ?");
