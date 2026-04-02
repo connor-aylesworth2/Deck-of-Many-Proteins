@@ -1,7 +1,0 @@
-Notes:
-
-number of sequences: 67
-protein family searched: glucose-6-phosphatases
-taxon searched: Aves
-date run: 3.26.25
-files produced: g6_aves.fasta, g6_aves_cleaned.fasta, g6_aves_MSA.fasta, g6_aves_plotcon.png, motif_outputs/
