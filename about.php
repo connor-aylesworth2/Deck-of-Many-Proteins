@@ -46,7 +46,11 @@
 <p>The project was designed to balance biological usefulness with practical web development constraints. A job-based model was chosen because it allows for a pheasable way to revisit prior work. The MySQL database schema was built as is so that jobs, sequences, files, and motif hits could be fetched independently or in a corresponding fashion, as each table is related to at least one other table.</p>
 
 <p><strong>SPECIAL SHOUT OUT</strong> to what were easily the hardests parts of this project: trying to make the site job-oriented through the several php files that talk to each other, and trying to implement a helpful and consistent schema.</p>
-<p>The website source code is maintained with Git and GitHub for version control. *LINK*</p>
+<p>The website source code is maintained with Git and GitHub for version control found here:
+<a href="https://github.com/connor-aylesworth2/Deck-of-Many-Proteins" target="_blank" rel="noopener noreferrer">
+View the GitHub repository
+</a>
+</p>
 </section>
 </main>
 
