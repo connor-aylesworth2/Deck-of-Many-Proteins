@@ -1,6 +1,3 @@
-#!/usr/local/bin/php
-
-
 <?php declare(strict_types=1); //declare strict types for easier debugging
 require __DIR__ . '/login.php'; // make pdo-connecting login.php file required
 

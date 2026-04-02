@@ -1,0 +1,76 @@
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_31/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_31/cleaned.fasta'
+Total records: 90
+Kept: 25
+Skipped predicted: 0
+Skipped contam: 0
+Skipped short: 1
+Skipped duplicate: 64
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_31/cleaned.fasta
+exists: yes
+size: 11091
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_31/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_31/cleaned.fasta'
+Inserted 25 sequences for job_id 31.
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_31/cleaned.fasta
+exists: yes
+size: 11091
+Plot conservation of a sequence alignment
+Window size [4]: Created /localdisk/home/s2837739/public_html/data/jobs/job_31/plotcon.1.png
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AAO19420.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AAO19434.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/ABC72073.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AEK33884.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AFC78996.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AFC79021.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AIZ50275.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AKG24998.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AKT04284.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AMR44347.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/AUO77998.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/BAO57034.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/CBH51685.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/QBP44064.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/QHD41891.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/QJD07847.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/QXM16436.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/QXO02098.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/URM59932.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/URM59936.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/USR36103.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/WCO87273.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/WWE99505.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/XRT74023.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_31/patmat_outputs/XYC63643.1_motifs.tsv
+Import complete.
+Inserted: 16
+Duplicates skipped: 0
+Other skipped rows/files: 0
+Job 31 completed successfully.

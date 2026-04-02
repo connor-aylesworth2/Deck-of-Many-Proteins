@@ -38,6 +38,8 @@ $jobs = $stmt->fetchAll();
     <td><?php echo htmlspecialchars((string)$job['job_id']); ?></td>
     <td><?php echo htmlspecialchars($job['protein_family']); ?></td>
     <td><?php echo htmlspecialchars($job['taxon_group']); ?></td>
+
+    <!-- assign css status class so complete / failed / queued jobs are easier to visually scan -->
     <td><?php $status = $job['status']; $class = 'info'; if ($status === 'complete') {
         $class = 'success';
     } elseif ($status === 'failed') {
@@ -53,9 +55,12 @@ $jobs = $stmt->fetchAll();
     <td><?php echo htmlspecialchars($job['send_time']); ?></td>
     <td><?php echo $job['done_time'] !== null ? htmlspecialchars($job['done_time']) : '—'; ?></td>
     <td><?php echo $job['is_example'] ? 'Example' : 'User'; ?></td>
+
+    <!-- link each history row to its dedicated results page -->
     <td><a href="job.php?job_id=<?php echo urlencode((string)$job['job_id']); ?>">View Job</a></td>
     </tr>
 
+    <!-- if a job failed, print its stored error directly below the main row -->
     <?php if ($job['status'] === 'failed' && !empty($job['error_message'])): ?>
     <tr>
     <td colspan="9">
@@ -65,6 +70,7 @@ $jobs = $stmt->fetchAll();
     </tr>
     <?php endif; ?>
 
+    <!-- print pipeline notes / completion notes below each job when available -->
     <?php if (!empty($job['notes'])): ?>
     <tr>
     <td colspan="9">

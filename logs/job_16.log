@@ -1,0 +1,3 @@
+sh: 1: esearch: not found
+sh: 1: efetch: not found
+Job failed: Command failed: esearch -db protein -query '"kinases"[Protein Name] AND Aves[Organism]' | efetch -format fasta > '/localdisk/home/s2837739/public_html/data/jobs/job_16/raw.fasta'

@@ -1,14 +1,17 @@
 <?php
-require 'login.php';
-include 'header.php';
+require 'login.php'; // make pdo connection-containing login.php file mandatory
+include 'header.php'; // include header section on example page
 
+/* define example dataset directory */
 $example_dir = "data/example";
 
+/* define filepaths for key example outputs */
 $raw_fasta   = $example_dir . "/g6_aves.fasta";
 $clean_fasta = $example_dir . "/g6_aves_cleaned.fasta";
 $msa_fasta   = $example_dir . "/g6_aves_MSA.fasta";
 $plotcon_png = $example_dir . "/g6_aves_plotcon.1.png";
 
+/* make placeholders for example job + table contents */
 $example_job = null;
 $sequence_rows = [];
 $motif_rows = [];
@@ -19,7 +22,7 @@ $job_stmt = $pdo->prepare("SELECT job_id FROM jobs WHERE is_example = 1 LIMIT 1"
 $job_stmt->execute();
 $example_job = $job_stmt->fetch();
 
-/*  */
+/* if example job exists, fetch its sequence + motif info from mysql */
 if ($example_job) {
     $job_id = (int)$example_job['job_id'];
 
@@ -28,7 +31,7 @@ if ($example_job) {
     $seq_stmt->execute([$job_id]);
     $sequence_rows = $seq_stmt->fetchAll();
 
-    /*  */
+    /* count total seqs from rows returned above */
     $total_seqs = count($sequence_rows);
 
     /* fetch motif hits for example job */
@@ -39,7 +42,7 @@ if ($example_job) {
 ?>
 
 
-<!-- -->
+<!-- main content container for the full example dataset walkthrough -->
 <main class="container">
 <section class="card">
 <h2>Example Dataset: Glucose-6-Phosphatase Proteins from Aves</h2>
@@ -59,6 +62,7 @@ if ($example_job) {
 <p>The table below contains the cleaned glucose-6-phosphatase protein sequences used for the avian example dataset. These sequences were originally retrieved from the NCBI Protein database using the following command:</p>
 <p><code>esearch -db protein -query '"glucose-6-phosphatase"[Protein Name] AND Aves[Organism]' | efetch -format fasta &gt; g6_aves.fasta</code></p>
 
+<!-- if example sequences were found, display them in a tidy table -->
 <?php if (!empty($sequence_rows)): ?>
 <table>
 <tr>
@@ -85,24 +89,29 @@ if ($example_job) {
 <section class="card">
 <h3>Download Files</h3>
 <ul>
+
+<!-- raw fasta straight from edirect retrieval -->
 <?php if (file_exists($raw_fasta)): ?>
 <li>
 <a href="<?php echo htmlspecialchars($raw_fasta); ?>">Download raw FASTA sequences</a>
 </li>
 <?php endif; ?>
 
+<!-- cleaned fasta after duplicate / quality filtering -->
 <?php if (file_exists($clean_fasta)): ?>
 <li>
 <a href="<?php echo htmlspecialchars($clean_fasta); ?>">Download cleaned FASTA sequences</a>
 </li>
 <?php endif; ?>
 
+<!-- msa output from clustalo -->
 <?php if (file_exists($msa_fasta)): ?>
 <li>
 <a href="<?php echo htmlspecialchars($msa_fasta); ?>">Download Clustal Omega multiple sequence alignment</a>
 </li>
 <?php endif; ?>
 
+<!-- conservation plot png from emboss plotcon -->
 <?php if (file_exists($plotcon_png)): ?>
 <li>
 <a href="<?php echo htmlspecialchars($plotcon_png); ?>">Download conservation plot PNG</a>
@@ -115,6 +124,7 @@ if ($example_job) {
 <h3>Sequence Conservation Plot</h3>
 <p>The cleaned avian glucose-6-phosphatase protein sequences were aligned using Clustal Omega to generate a multiple sequence alignment (MSA). The alignment was then analysed with EMBOSS plotcon to estimate how strongly each amino acid position is conserved across the example dataset.</p>
 
+<!-- show conservation plot if the png exists where expected -->
 <?php if (file_exists($plotcon_png)): ?>
 <img
     class="plot"
@@ -130,6 +140,7 @@ if ($example_job) {
 <h3>Motif Hits Summary</h3>
 <p>The table below summarises motif hits identified by EMBOSS patmatmotifs in the example bird glucose-6-phosphatase sequences. Each row corresponds to a detected motif in one protein sequence.</p>
 
+<!-- motif hit display table populated from mysql motif_hits + sequences join -->
 <?php if (!empty($motif_rows)): ?>
 <table>
 <tr>
@@ -168,4 +179,4 @@ if ($example_job) {
 </section>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?> <!-- include footer in example page -->

@@ -1,0 +1,168 @@
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_42/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_42/cleaned.fasta'
+Total records: 88
+Kept: 66
+Skipped predicted: 12
+Skipped contam: 0
+Skipped short: 6
+Skipped duplicate: 4
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_42/cleaned.fasta
+exists: yes
+size: 27166
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_42/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_42/cleaned.fasta'
+Inserted 66 sequences for job_id 42.
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_42/cleaned.fasta
+exists: yes
+size: 27166
+Plot conservation of a sequence alignment
+Window size [4]: Created /localdisk/home/s2837739/public_html/data/jobs/job_42/plotcon.1.png
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AAA16222.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AAA19966.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AAA74381.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AAC52122.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AAN01223.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/ABK30805.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AGL93165.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/AIP90497.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/CAA87708.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/EHB06301.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/EHH25011.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/EHH58166.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/ELK01455.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/ELW54721.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/EPQ13615.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAB1264882.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAF7471092.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAG8512917.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAH0504934.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAI5219285.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAI5219286.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAI5928829.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KAL1779711.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/KFO28552.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/VFV22000.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/VFV22001.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_003279539.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_003504721.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_003768231.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_003786361.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_004633858.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_005369120.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_006092387.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_006156140.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_006738635.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_008066427.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_011215059.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_016006423.2_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_021032575.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_021069318.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_022413814.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_025218603.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_027283872.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_027424231.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_027726123.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_028376718.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_028636324.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_028712710.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_028930543.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_029068429.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_029782771.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_031208511.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_031512969.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_034883081.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_036050568.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_036609830.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_037665724.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_038403145.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_038610814.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/XP_039080223.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/sp_O19133.1_G6PC1_CANLF_motifs.tsv
+  No matching sequence for accession G6PC1_CANLF
+  No matching sequence for accession G6PC1_CANLF
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/sp_P35575.2_G6PC1_HUMAN_motifs.tsv
+  No matching sequence for accession G6PC1_HUMAN
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/sp_P35576.2_G6PC1_MOUSE_motifs.tsv
+  No matching sequence for accession G6PC1_MOUSE
+  No matching sequence for accession G6PC1_MOUSE
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/sp_P43428.1_G6PC1_RAT_motifs.tsv
+  No matching sequence for accession G6PC1_RAT
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/sp_Q19KA1.1_G6PC1_FELCA_motifs.tsv
+  No matching sequence for accession G6PC1_FELCA
+  No matching sequence for accession G6PC1_FELCA
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_42/patmat_outputs/sp_Q29RU6.1_G6PC1_BOVIN_motifs.tsv
+  No matching sequence for accession G6PC1_BOVIN
+  No matching sequence for accession G6PC1_BOVIN
+Import complete.
+Inserted: 98
+Duplicates skipped: 0
+Other skipped rows/files: 10
+Job 42 completed successfully.

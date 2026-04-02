@@ -1,0 +1,38 @@
+ WARNING:  FAILURE ( Mon Mar 30 00:45:13 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ esearch.fcgi -retmax 0 -usehistory y -db protein -term "\"kinases\"[Protein Name] AND Aves [Organism]" -tool edirect -edirect 24.7 -edirect_os Linux
+<WarningList>
+  <QuotedPhraseNotFound>"kinases"[Protein Name]</QuotedPhraseNotFound>
+  <OutputMessage>No items found.</OutputMessage>
+<WarningList>
+SECOND ATTEMPT
+ WARNING:  FAILURE ( Mon Mar 30 00:45:15 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ esearch.fcgi -retmax 0 -usehistory y -db protein -term "\"kinases\"[Protein Name] AND Aves [Organism]" -tool edirect -edirect 24.7 -edirect_os Linux
+<WarningList>
+  <QuotedPhraseNotFound>"kinases"[Protein Name]</QuotedPhraseNotFound>
+  <OutputMessage>No items found.</OutputMessage>
+<WarningList>
+LAST ATTEMPT
+ ERROR:  FAILURE ( Mon Mar 30 00:45:18 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ esearch.fcgi -retmax 0 -usehistory y -db protein -term "\"kinases\"[Protein Name] AND Aves [Organism]" -tool edirect -edirect 24.7 -edirect_os Linux
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE eSearchResult>
+<eSearchResult>
+  <Count>0</Count>
+  <RetMax>0</RetMax>
+  <RetStart>0</RetStart>
+  <QueryKey>1</QueryKey>
+  <WebEnv>MCID_69c9b98e655e1498f60f6dca</WebEnv>
+  <TranslationSet>
+    <Translation>
+      <From>Aves[Organism]</From>
+      <To>"Aves"[Organism]</To>
+    </Translation>
+  </TranslationSet>
+  <QueryTranslation>"kinases"[Protein Name] AND Aves[Organism]</QueryTranslation>
+  <WarningList>
+    <QuotedPhraseNotFound>"kinases"[Protein Name]</QuotedPhraseNotFound>
+    <OutputMessage>No items found.</OutputMessage>
+  </WarningList>
+</eSearchResult>
+QUERY FAILURE
+Job failed: No FASTA data retrieved.

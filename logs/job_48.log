@@ -1,0 +1,17 @@
+curl: (22) The requested URL returned error: 429
+ ERROR:  curl command failed ( Thu Apr  2 21:05:58 BST 2026 ) with: 22
+-X POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi -d retmax=0&usehistory=y&db=protein&term=kinases%5BProtein%20Name%5D%20AND%20Mammalia%20%5BOrganism%5D&tool=edirect&edirect=24.7&edirect_os=Linux
+HTTP/1.1 429 Too Many Requests
+ WARNING:  FAILURE ( Thu Apr  2 21:05:58 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ esearch.fcgi -retmax 0 -usehistory y -db protein -term "kinases[Protein Name] AND Mammalia [Organism]" -tool edirect -edirect 24.7 -edirect_os Linux
+EMPTY RESULT
+SECOND ATTEMPT
+curl: (22) The requested URL returned error: 429
+ ERROR:  curl command failed ( Thu Apr  2 21:06:00 BST 2026 ) with: 22
+-X POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi -d retmax=0&usehistory=y&db=protein&term=kinases%5BProtein%20Name%5D%20AND%20Mammalia%20%5BOrganism%5D&tool=edirect&edirect=24.7&edirect_os=Linux
+HTTP/1.1 429 Too Many Requests
+ WARNING:  FAILURE ( Thu Apr  2 21:06:00 BST 2026 )
+nquire -url https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ esearch.fcgi -retmax 0 -usehistory y -db protein -term "kinases[Protein Name] AND Mammalia [Organism]" -tool edirect -edirect 24.7 -edirect_os Linux
+EMPTY RESULT
+LAST ATTEMPT
+Job failed: No FASTA data retrieved.

@@ -1,0 +1,34 @@
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_44/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_44/cleaned.fasta'
+Total records: 6
+Kept: 4
+Skipped predicted: 0
+Skipped contam: 0
+Skipped short: 0
+Skipped duplicate: 2
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_44/cleaned.fasta
+exists: yes
+size: 2711
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_44/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_44/cleaned.fasta'
+Inserted 4 sequences for job_id 44.
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_44/cleaned.fasta
+exists: yes
+size: 2711
+Plot conservation of a sequence alignment
+Window size [4]: Created /localdisk/home/s2837739/public_html/data/jobs/job_44/plotcon.1.png
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Scan a protein sequence with motifs from the PROSITE database
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_44/patmat_outputs/CAH6787615.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_44/patmat_outputs/KAI5771898.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_44/patmat_outputs/KAI6061152.1_motifs.tsv
+Processing: /localdisk/home/s2837739/public_html/data/jobs/job_44/patmat_outputs/OWK02243.1_motifs.tsv
+Import complete.
+Inserted: 12
+Duplicates skipped: 0
+Other skipped rows/files: 0
+Job 44 completed successfully.

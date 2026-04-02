@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-chmod 701 /home/s2837739
-chmod 701 /home/s2837739/public_html
+# Usage: access.sh #
+# set homespace to 711 to allow public access to website #
+chmod 711 ${HOME}
 
 

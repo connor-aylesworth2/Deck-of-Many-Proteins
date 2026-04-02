@@ -1,0 +1,32 @@
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_26/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_26/cleaned.fasta'
+Total records: 95
+Kept: 67
+Skipped predicted: 17
+Skipped contam: 2
+Skipped short: 0
+Skipped duplicate: 9
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_26/cleaned.fasta
+exists: yes
+size: 28401
+Running cleaner command:
+'/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_cleaner.py' '/localdisk/home/s2837739/public_html/data/jobs/job_26/raw.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_26/cleaned.fasta'
+Inserted 67 sequences for job_id 26.
+After cleaner:
+clean_fasta path: /localdisk/home/s2837739/public_html/data/jobs/job_26/cleaned.fasta
+exists: yes
+size: 28401
+Plot conservation of a sequence alignment
+Window size [4]: Created /localdisk/home/s2837739/public_html/data/jobs/job_26/plotcon.1.png
+Traceback (most recent call last):
+  File "/localdisk/home/s2837739/public_html/scripts/seq_separator.py", line 14, in <module>
+    os.makedirs(output_dir, exist_ok=TRUE)
+                                     ^^^^
+NameError: name 'TRUE' is not defined. Did you mean: 'True'?
+Job failed: Command failed: '/usr/bin/python3' '/localdisk/home/s2837739/public_html/scripts/seq_separator.py' '/localdisk/home/s2837739/public_html/data/jobs/job_26/cleaned.fasta' '/localdisk/home/s2837739/public_html/data/jobs/job_26/patmat_input'
+Traceback (most recent call last):
+  File "/localdisk/home/s2837739/public_html/scripts/seq_separator.py", line 14, in <module>
+    os.makedirs(output_dir, exist_ok=TRUE)
+                                     ^^^^
+NameError: name 'TRUE' is not defined. Did you mean: 'True'?
